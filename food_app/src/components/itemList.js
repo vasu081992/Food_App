@@ -29,6 +29,7 @@ function ItemList({items,dummy}) {
     : "https://glebekitchen.com/wp-content/uploads/2019/12/chickenbiryanibowltop.jpg"
   } 
   className='w-20 h-auto object-contain rounded-lg' 
+  alt="kitchen pic"
 />
           </div>
         </div>

@@ -54,7 +54,7 @@ const [userName,setuserName] = useState(null)
     
     
     let data = {
-      name : "Thala Ajith",
+      name : "Vasu",
     }
     
     setuserName(data.name)
