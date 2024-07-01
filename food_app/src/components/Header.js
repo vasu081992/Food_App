@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import UserContext from "../utils/userContext"
+import { useSelector } from "react-redux"
+
 
 const Header = () => {
 
@@ -10,6 +12,17 @@ const Header = () => {
 
    const data = useContext(UserContext)
    console.log("context data",data)
+
+
+   const cartItems = useSelector((store)=>store.cart.items); // this hook gives access to the store. 
+
+   // we are subscribing to the store using selector. . 
+
+   // we are subscribing to items using selector
+
+
+
+
 
   useEffect(()=>{
     console.log("use effect from header component")
@@ -56,7 +69,9 @@ const Header = () => {
            Grocery 
            </Link> 
 
-          <li className="px-3">Cart </li>
+          <li className="px-3 font-bold">Cart - ({cartItems.length} items) </li>
+
+
           <button className="login" onClick={()=>{
             btnNameReact==="Login"? setbtnNameReact("Logout"): setbtnNameReact("Login") // use this for explaining in interview about use State - very important and good example
           }}> {btnNameReact}

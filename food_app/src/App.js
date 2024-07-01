@@ -9,6 +9,9 @@ import Error from "./components/Error.js"
 import Menu from "./components/Restaurantmenu.js"
 import UserContext from "./utils/userContext.js"
 import "./index.css"
+import {Provider} from "react-redux"
+import { configureStore } from "@reduxjs/toolkit"
+import appStore from "./utils/appStore.js"
 
 
 
@@ -65,6 +68,7 @@ const [userName,setuserName] = useState(null)
 
 return (
 
+  <Provider store={appStore}>
   <UserContext.Provider value={{loggedInUser:userName,setuserName}}> 
     <div className="App">
 
@@ -77,6 +81,7 @@ return (
     </div>
 
     </UserContext.Provider>
+    </Provider>
 );
 
 };
