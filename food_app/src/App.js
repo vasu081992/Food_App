@@ -12,6 +12,7 @@ import "./index.css"
 import {Provider} from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
 import appStore from "./utils/appStore.js"
+import Cart from "./components/Cart.js"
 
 
 
@@ -124,6 +125,12 @@ const appRouter = createBrowserRouter([
 
   path : "/restaurants/:resid",
   element :<Menu/>
+
+},
+{
+
+  path : "/cart",
+  element :<Cart/>
 
 }
 

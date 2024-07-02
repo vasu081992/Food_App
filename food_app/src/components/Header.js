@@ -20,7 +20,7 @@ const Header = () => {
 
    // we are subscribing to items using selector
 
-
+console.log("cart items from redux", cartItems)
 
 
 
@@ -68,8 +68,15 @@ const Header = () => {
           <Link to="/grocery"> 
            Grocery 
            </Link> 
+           
+           <li className="px-3"> 
 
-          <li className="px-3 font-bold">Cart - ({cartItems.length} items) </li>
+           <Link to="/cart"> 
+
+           Cart - ({cartItems.length} items) 
+
+          </Link> 
+          </li>
 
 
           <button className="login" onClick={()=>{

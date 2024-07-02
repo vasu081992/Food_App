@@ -1,11 +1,27 @@
 import React from 'react'
 import { CDN_URL } from '../utils/constants'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../utils/cartSlice';
 
 function ItemList({items,dummy}) {
 
   console.log("dummy data passed from restaurant menu to this itemlist component",dummy) // this is to understand prop drilling
 
 
+
+
+  const dispatch = useDispatch();// this comes from react-redux
+
+
+  const handleAddItem = (item)=>{ 
+
+ // we need to dispatch an action via redux while adding item 
+ 
+
+ dispatch(addItem(item))
+
+
+  }
 
   return (
     <div>
@@ -21,7 +37,13 @@ function ItemList({items,dummy}) {
 
           <div className=' absolute bottom-0'>
           
-<button className='p-0.5 bg-black bg-opacity-50 shadow-lg text-white mx-2 border rounded-lg'>Add + </button>
+<button className='p-0.5 bg-black bg-opacity-50 shadow-lg text-white mx-2 border rounded-lg' onClick={()=>
+  handleAddItem(item)}>
+
+  Add + 
+
+</button>
+
 </div>
 <img 
   src={item.card?.info?.imageId 

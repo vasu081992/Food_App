@@ -9,7 +9,7 @@ const cartSlice = createSlice({
    name:'cart',
 
    initialState:{
-    items:["burger","pizza"],
+    items:[],
    },
 
    // reducers are used to modify the state
@@ -28,8 +28,12 @@ const cartSlice = createSlice({
     },
 
     clearCart : (state)=>{
-      state.items = [];
+      // state.items = [];
 
+      // we can just do return {items: []} .... ie state.items = [] / return return {items: []
+
+
+      return {items:[]}
     }
 
    }
